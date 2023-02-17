@@ -4,9 +4,14 @@ def criptografar palavra, chave
 
   for i in 0..array.size - 1 do
     alfabeto_i = alfabeto.index array[i]
-    array[i] = alfabeto[alfabeto_i + chave] 
+    if alfabeto_i + chave > 26
+      index = (alfabeto_i + chave) - 26
+      array[i] = alfabeto[index]
+    elsif
+      array[i] = alfabeto[alfabeto_i + chave]
+    end
   end
-  puts array
+  puts array.join
 end
-criptografar "abcdef", 3    
+criptografar "helloworld", 3    
 
